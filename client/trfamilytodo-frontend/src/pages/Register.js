@@ -35,11 +35,13 @@ const Register = () => {
     <div className="auth-container">
       <form onSubmit={handleSubmit}>
         <h2>Register</h2>
+        <h3>sign up to continue!</h3>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
+            className="form-value"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
@@ -49,11 +51,12 @@ const Register = () => {
           <input
             type="password"
             id="password"
+            className="form-value"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Register</button>
+        <button className="form-btn" type="submit">Register</button>
       </form>
     </div>
   );

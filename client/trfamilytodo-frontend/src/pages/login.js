@@ -41,26 +41,29 @@ const Login = () => {
   return (
     <div className="auth-container">
       <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2 className="form-name">Login</h2>
+        <h3>please sign in to continue.</h3>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
+            className="form-value"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
+            className="form-value"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <button className="form-btn" type="submit">Login</button>
       </form>
     </div>
   );
