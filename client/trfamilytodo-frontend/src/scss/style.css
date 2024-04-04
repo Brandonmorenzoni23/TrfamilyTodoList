@@ -1,0 +1,12 @@
+body {
+  background: Black;
+}
+
+.Form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  background-color: lightgrey;
+}/*# sourceMappingURL=style.css.map */

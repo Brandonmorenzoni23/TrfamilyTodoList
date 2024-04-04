@@ -1,0 +1,15 @@
+@import "./util";
+
+body{
+    background: $primary-background-color;
+}
+
+.Form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    background-color: $primary-color;
+}
+
