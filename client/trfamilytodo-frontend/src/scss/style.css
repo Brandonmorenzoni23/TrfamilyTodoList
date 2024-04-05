@@ -15,6 +15,9 @@ body {
     align-items: center;
     color: white;
   }
+}
+
+@media (max-width: 400px) {
   .form-value {
     background: transparent;
     width: 95%;
@@ -23,6 +26,9 @@ body {
     padding: 6px;
     background: lightgrey;
   }
+}
+
+@media (max-width: 400px) {
   .form-btn {
     background: linear-gradient(0.25turn, #7116BE, #A716CF, #D516DB);
     width: 50%;
@@ -31,6 +37,9 @@ body {
     margin-top: 10%;
     margin-left: 50%;
   }
+}
+
+@media (max-width: 400px) {
   .form-span {
     display: flex;
     flex-direction: row;
@@ -40,6 +49,7 @@ body {
     margin-right: 25%;
   }
 }
+
 /*To display or not display login or register form*/
 [data-show=true] {
   display: flex;

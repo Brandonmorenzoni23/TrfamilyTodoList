@@ -1,5 +1,25 @@
 @import "./util";
 @import './mediaQ';
+@import './form';
+
+@mixin mobile {
+    @media (max-width: $mobile-device){
+        @content
+    }
+}; 
+@mixin tablet {
+    @media (min-width: $tablet-min) and (max-width: $tablet-max){
+        @content
+    }
+};
+@mixin desktop {
+    @media (min-width: $desktop-min){
+        @content
+    }
+};
+
+
+
 
 body{
     font-family: $primary-font-family,$secondary-background-color;
@@ -10,40 +30,29 @@ body{
     background: $primary-background-color;
 }
 
-@media (max-width: $mobile-device){
+
     .form{
-        display: block;
-        margin-left: 12.5%;
-        justify-content: center;
-        align-items: center;
-        color: $alt-color;
-    };
-    .form-value{
-        background: transparent;
-        width: 95%;
-        height: 30px;
-        border-radius: 24px;
-        padding: 6px;
-        background: $primary-color
-    }
-    .form-btn{
-        background: $primary-btn-color;
-        width: 50%;
-        border-radius: 20px;
-        padding: 12px;
-        margin-top: 10%;
-        margin-left: 50%;
-    }
-    .form-span{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30%;
-        margin-right: 25%;
-        font-size: map-get($font-size , 'big' );
+    @include mobile {
+        @include form();
     }
 };
+    .form-value{
+    @include mobile {
+        @include formValue();
+    }
+};
+    .form-btn{
+    @include mobile {
+       @include formBtn();
+    }
+};
+    .form-span{
+    @include mobile {
+        @include formSpan();
+    }
+};
+
+
 
 /*To display or not display login or register form*/
 [data-show=true] {

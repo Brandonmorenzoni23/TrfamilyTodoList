@@ -1,0 +1,33 @@
+@mixin form() {
+        display: block;
+        margin-left: 12.5%;
+        justify-content: center;
+        align-items: center;
+        color: $alt-color;
+}
+
+@mixin formValue() {
+        background: transparent;
+        width: 95%;
+        height: 30px;
+        border-radius: 24px;
+        padding: 6px;
+        background: $primary-color
+}
+@mixin formBtn() {
+        background: $primary-btn-color;
+        width: 50%;
+        border-radius: 20px;
+        padding: 12px;
+        margin-top: 10%;
+        margin-left: 50%;
+}
+@mixin formSpan() {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30%;
+        margin-right: 25%;
+        font-size: map-get($font-size , 'big' );
+}
