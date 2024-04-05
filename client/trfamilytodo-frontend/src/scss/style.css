@@ -1,12 +1,115 @@
 body {
+  font-family: "Bebas Neue", grey;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background: Black;
 }
 
-.Form {
+@media (max-width: 400px) {
+  .form {
+    display: block;
+    margin-left: 12.5%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .form-value {
+    background: transparent;
+    width: 95%;
+    height: 30px;
+    border-radius: 24px;
+    padding: 6px;
+    background: lightgrey;
+  }
+  .form-btn {
+    background: linear-gradient(0.25turn, #7116BE, #A716CF, #D516DB);
+    width: 50%;
+    border-radius: 20px;
+    padding: 12px;
+    margin-top: 10%;
+    margin-left: 50%;
+  }
+  .form-span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+    margin-right: 25%;
+  }
+}
+/*To display or not display login or register form*/
+[data-show=true] {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  margin: auto;
-  background-color: lightgrey;
+}
+
+[data-show=false] {
+  display: none;
+}
+
+[data-dont-show=true] {
+  display: none;
+}
+
+[data-dont-show=false] {
+  display: flex;
+}
+
+/* Toggle btn */
+.switch {
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 45px;
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: lightgrey;
+  transition: 0.5s;
+  border: 3px solid lightgrey;
+  box-shadow: 1px 1px 1px whitesmoke;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  bottom: 14px;
+  top: 8px;
+  background: linear-gradient(0.25turn, #7116BE, #A716CF, #D516DB);
+  transition: 0.5s;
+}
+
+.switch input {
+  display: none;
+}
+
+input:checked + .slider {
+  background: linear-gradient(0.25turn, #7116BE, #A716CF, #D516DB);
+}
+
+input:checked + .slider:before {
+  transform: translateX(47px) rotateZ(45deg);
+  background: lightgrey;
+}
+
+.slider.round {
+  border-radius: 35px;
+}
+
+.slider.round:before {
+  width: 43%;
+  height: 43%;
+  border-top-right-radius: 70px;
+  border-top-left-radius: 70px;
+  transform: rotateZ(-45deg);
 }/*# sourceMappingURL=style.css.map */

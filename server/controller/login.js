@@ -4,11 +4,12 @@ const jwtGenerator = require("../utils/jwtGenerator");
 
 
 exports.getRegister = async (req, res) => {
-    const { email, name, password } = req.body;
+    const { username, password } = req.body;
+    console.log( username, password)
 
     try {
-      const user = await pool.query("SELECT * FROM users WHERE user_email = $1", [
-        email
+      const user = await pool.query("SELECT * FROM users WHERE Users = $1", [
+        username
       ]);
   
       if (user.rows.length > 0) {
@@ -19,8 +20,8 @@ exports.getRegister = async (req, res) => {
       const bcryptPassword = await bcrypt.hash(password, salt);
   
       let newUser = await pool.query(
-        "INSERT INTO users (user_name, user_email, user_password) VALUES ($1, $2, $3) RETURNING *",
-        [name, email, bcryptPassword]
+        "INSERT INTO users (user_name, user_password) VALUES ($1, $2,) RETURNING *",
+        [JSON.stringify(username, bcryptPassword)]
       );
   
       const jwtToken = jwtGenerator(newUser.rows[0].user_id);
